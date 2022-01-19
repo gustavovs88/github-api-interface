@@ -6,6 +6,7 @@ export const GithubContext = createContext({
   user: {},
   repositories: [],
   starred: [],
+  favorites: [],
 });
 
 const GithubProvider = ({ children }) => {
@@ -28,6 +29,7 @@ const GithubProvider = ({ children }) => {
     },
     repositories: [],
     starred: [],
+    favorites: [],
   });
 
   const getUser = (username) => {
@@ -86,11 +88,27 @@ const GithubProvider = ({ children }) => {
     });
   };
 
+  const getFavoriteUsers = () => {
+    var values = [],
+      keys = Object.keys(localStorage),
+      i = keys.length;
+
+    while (i--) {
+      values.push(JSON.parse(localStorage.getItem(keys[i])));
+    }
+
+    setGithubState((prevState) => ({
+      ...prevState,
+      favorites: values,
+    }));
+  };
+
   const contextValue = {
     githubState,
     getUser: useCallback((username) => getUser(username), []),
     getUserRepos: useCallback((username) => getUserRepos(username), []),
     getUserStarred: useCallback((username) => getUserStarred(username), []),
+    getFavoriteUsers: useCallback(() => getFavoriteUsers(), []),
   };
 
   return (

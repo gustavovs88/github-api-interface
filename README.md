@@ -4,19 +4,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## About project
 
-This repository was created in order to show how we can create a frontend application with reusable components.
+This is a forked repository from [Matheus Benites (benits) repository](https://github.com/benits/github-api-interface). It was created as a project from Digital Innovation One (DIO) Bootcamp Eduzz Fullstack #2
 
-We will create an application using the github public api.
+We will add a feature to the application using the knowledge acquired from the Bootcamp so far.
 
-### Features
+### Feature added
 
-- Search infos by username
-- Search repo by username
-- Search starred by username
+- Favorite Users Tab
+
+Basically it was added two components:
+
+- _star_ - renders a star next to user profile informations and handles favorite users data when it's clicked;
+- _favorite-item_ - render all favorited users) and a function in the provider (`getFavoriteUsers()` - update favorite users).
+
+Since it's a frontend challenge i used localstorage to store the favorite users informations.
 
 ### Preview
 
-Print of the finished project.
+Print of the finished project with the feature added.
 
 ![plot](./image/snapshot-1.png)
 

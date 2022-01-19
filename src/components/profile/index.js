@@ -1,6 +1,7 @@
 import React from "react";
 import useGithub from "../../hooks/github-hooks";
 import * as S from "./styled";
+import Star from "../star";
 
 const Profile = () => {
   const { githubState } = useGithub();
@@ -55,6 +56,7 @@ const Profile = () => {
           </div>
         </S.WrapperStatusCount>
       </S.WrapperInfoUser>
+      <Star />
     </S.Wrapper>
   );
 };
