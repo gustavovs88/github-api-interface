@@ -12,10 +12,11 @@ We will add a feature to the application using the knowledge acquired from the B
 
 - Favorite Users Tab
 
-Basically it was added two components:
+Basically it was added two components and a function:
 
 - _star_ - renders a star next to user profile informations and handles favorite users data when it's clicked;
-- _favorite-item_ - render all favorited users) and a function in the provider (`getFavoriteUsers()` - update favorite users).
+- _favorite-item_ - render all favorited users
+- `getFavoriteUsers()` added in the provider - update favorite users to the global context.
 
 Since it's a frontend challenge i used localstorage to store the favorite users informations.
 
